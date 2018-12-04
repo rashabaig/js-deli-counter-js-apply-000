@@ -1,6 +1,6 @@
-function takeANumber (currentLine, newCustomer) {
-  currentLine.push(newCustomer)
-return ("Welcome, " + newCustomer + "." + " You are number " + (currentLine.length) + " in line." )
+function takeANumber (currentLine) {
+  currentLine.push(currentLine.length + 1)
+return ("Welcome." + " You are number " + (currentLine.length) + " in line." )
 }
 function nowServing (katzDeliLine) {
   if (katzDeliLine.length < 1) {
@@ -12,14 +12,9 @@ function nowServing (katzDeliLine) {
   }
 }
 function currentLine (customerArray) {
-  var emptyArray =[];
   if (customerArray.length >=1) {
-      for (let i=0; i < customerArray.length; i++) {
-      emptyArray.push( (i+1)+". " + customerArray[i]); 
-      }
-        return "The line is currently: " + emptyArray.join(", ");
+        return "The line is currently: " + currentLine.length;
       } else {
-    emptyArray.push("The line is currently empty.");
+   return ("The line is currently empty.");
       }
-    return emptyArray
 }
